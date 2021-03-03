@@ -1,8 +1,8 @@
-def say(words)
+def say(words="hello")
   puts words + "."
 end
 
-say("Hello")
+say()
 say("Hi")
 say("How are you")
 say("I'm fine")
