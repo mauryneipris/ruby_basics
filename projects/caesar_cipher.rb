@@ -5,22 +5,24 @@
 # Do math on the respective ASCII codes
 # Output the modified string.
 
+
 def caesar_cipher(string, shift)
-  ascii_arr = string.bytes
-  shifted_arr = ascii_arr.map do |code|
-    unless code == 32
-      code + shift
-    else code = code
+  lower = ("a".."z")
+  caesar_string = ""
+
+  string.each_char do |char|
+      if lower.include? (char.downcase) # identify letters only
+        shift.times {char = char.next}
+      end
+      caesar_string << char[-1]
     end
-  end 
-  shifted_char_arr = shifted_arr.map { |code| code.chr }
-  shifted_string = shifted_char_arr.join
-  p shifted_string
+  caesar_string
 end
+
 
 puts "Enter a string to be encoded"
 string = gets.chomp
 puts "Enter the number to shift"
 shift = gets.chomp.to_i
 
-caesar_cipher(string, shift)
+puts caesar_cipher(string, shift)
