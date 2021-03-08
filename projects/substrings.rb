@@ -11,11 +11,12 @@ def substrings(string, dictionary)
     # if str_arr.include?(dictionary[index])
     if string.index(dictionary[index])
       p "#{dictionary[index]} is a substring"
+      results[dictionary[index]] = (results[dictionary[index]].to_i + 1) 
     else
       p "#{dictionary[index]} is not a substring"
     end
   end
-
+  p results
 end
 
-substrings("below", dictionary)
+substrings("partner", dictionary)
