@@ -6,11 +6,14 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(string, dictionary)
   results = {}
-  if string.index(dictionary[9])
-    p "#{dictionary[9]} is a substring"
-  else
-    p "#{dictionary[9]} is not a substring"
+  dictionary.each_index do |index| 
+    if string.index(dictionary[index])
+      p "#{dictionary[index]} is a substring"
+    else
+      p "#{dictionary[index]} is not a substring"
+    end
   end
+
 end
 
 substrings("below", dictionary)
