@@ -6,17 +6,22 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(string, dictionary)
   results = {}
-  # str_arr = string.split(' ')
-  dictionary.each_index do |index| 
-    # if str_arr.include?(dictionary[index])
-    if string.index(dictionary[index])
-      p "#{dictionary[index]} is a substring"
-      results[dictionary[index]] = (results[dictionary[index]].to_i + 1) 
-    else
-      p "#{dictionary[index]} is not a substring"
+  substr_arr = []
+  str_arr = string.downcase.split(' ')
+
+  dictionary.each_index do |dic_ind| 
+
+    # for each str_arr[index].index(dictionary[index])
+    # if it's true(the substring is found in the string), add dictionary[index]
+    # as a key in results hash with the value being results[dictionary[index] + 1]
+    str_arr.each_index do |str_ind|
+      if str_arr[str_ind].index(dictionary[dic_ind])
+        p "#{dictionary[dic_ind]} is a substring"
+        results[dictionary[dic_ind]] = (results[dictionary[dic_ind]].to_i + 1)
+      end
     end
   end
-  p results
+   p results
 end
 
-substrings("partner", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
