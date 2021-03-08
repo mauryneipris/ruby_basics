@@ -6,7 +6,6 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(string, dictionary)
   results = {}
-  substr_arr = []
   str_arr = string.downcase.split(' ')
 
   dictionary.each_index do |dic_ind| 
