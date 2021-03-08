@@ -6,7 +6,9 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 
 def substrings(string, dictionary)
   results = {}
+  # str_arr = string.split(' ')
   dictionary.each_index do |index| 
+    # if str_arr.include?(dictionary[index])
     if string.index(dictionary[index])
       p "#{dictionary[index]} is a substring"
     else
