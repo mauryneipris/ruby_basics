@@ -17,7 +17,7 @@ def stock_picker(array)
     end
   end
   # sort the values from least to greatest
-  profits = profits.sort_by { |k,v| v}
+  profits = profits.sort_by { |_k,v| v}
   # max_profit is set to the last key-value pair in the profits hash
   max_profit = profits[-1]
   p "Buy on day #{max_profit[0].first} and sell on day #{max_profit[0].last} for the maximum profit of $#{max_profit[1]}"
